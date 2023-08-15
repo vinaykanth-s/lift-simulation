@@ -9,7 +9,7 @@ function generateLayout() {
 }
 
 function generateFloors(m, n) {
-  console.log({ m, n });
+  // console.log({ m, n });
   document.getElementById("layout").innerHTML = "";
 
   // let liftContainer = document.createElement("div");
@@ -55,7 +55,7 @@ function generateFloors(m, n) {
 }
 
 function callLift(floor, direction) {
-  console.log({ floor, direction });
+  // console.log({ floor, direction });
   let nearestLift = null;
   let minDistance = Number.MAX_SAFE_INTEGER;
 
@@ -74,23 +74,23 @@ function callLift(floor, direction) {
 
 function moveLift(liftNo, targetLiftPosn) {
   //liftIndex, targetFloor
-  console.log("moveLift called", targetLiftPosn);
+  // console.log("moveLift called", targetLiftPosn);
   const reqLift = document.getElementById(`Lift-${liftNo}`);
   // console.log({ reqLift });
   let currLiftPosn = parseInt(currLiftPositionArr[liftNo]);
   // const targetLiftPosn = currLiftPositionArr[liftNo]
-  var anim = setInterval(animate, 2000);
+  var anim = setInterval(animate, 100);
 
   function animate() {
     // console.log(`liftNo is ${liftNo}, currLiftPosn is ${currLiftPosn},targetLiftPosn is ${targetLiftPosn}`)
-    console.log("outside if", currLiftPosn, targetLiftPosn);
+    // console.log("outside if", currLiftPosn, targetLiftPosn);
 
     if (currLiftPosn != targetLiftPosn) {
-      console.log("inside if", currLiftPosn, targetLiftPosn);
+      // console.log("inside if", currLiftPosn, targetLiftPosn);
       stepVector = parseInt(Math.sign(targetLiftPosn - currLiftPosn));
       currLiftPosn += stepVector;
       let intermediateFloor = `${currLiftPosn * -100}px`;
-      console.log({ reqLift });
+      // console.log({ reqLift });
       reqLift.style.top = intermediateFloor;
     } else {
       currLiftPositionArr[liftNo] = targetLiftPosn;
@@ -99,4 +99,4 @@ function moveLift(liftNo, targetLiftPosn) {
   }
 }
 
-console.log({ currLiftPositionArr });
+// console.log({ currLiftPositionArr });
