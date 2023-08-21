@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .inputContainer {
@@ -50,6 +52,22 @@
 }
 
 
+.door {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  border: 1px solid #111;
+  background-color: rgb(142, 179, 247);
+}
+
+.leftDoor {
+  left: 0;
+}
+
+.rightDoor {
+  right: 0;
+}
+
 .sourceCodeLInk{
   position: fixed;
   top: 10px;
@@ -57,5 +75,34 @@
   padding: 10px;
   text-decoration: none;
 }
+
+/* Lift doors animation */
+.openDoor {
+  animation: openDoorAnimation 0.5s forwards;
+}
+
+.closeDoor {
+  animation: closeDoorAnimation 0.5s forwards;
+}
+
+@keyframes openDoorAnimation {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes closeDoorAnimation {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+
 
 
