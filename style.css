@@ -19,8 +19,8 @@
   text-align: center;
 }
 
-.layout {
-  margin-top: 10px;
+#layout {
+  margin: 10px;
 }
 
 .floor {
@@ -68,12 +68,11 @@
   right: 0;
 }
 
-.sourceCodeLInk{
-  position: fixed;
-  top: 10px;
-  right: 10px;
+.titleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
-  text-decoration: none;
 }
 
 /* Lift doors animation */
@@ -102,6 +101,18 @@
     transform: scaleX(1);
   }
 }
+
+/* CSS for responsiveness */
+
+@media screen and (max-width: 768px) {
+  .inputContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+
+
 
 
 
